@@ -1,0 +1,553 @@
+/* Devotional Cover page styles - Full Screen */
+.cover-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/download.png') center center/cover no-repeat fixed;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+}
+
+/* Divine background overlay for spiritual atmosphere */
+.divine-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(139, 69, 19, 0.8) 0%, 
+    rgba(255, 215, 0, 0.3) 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(218, 165, 32, 0.4) 75%,
+    rgba(139, 69, 19, 0.7) 100%);
+  pointer-events: none;
+  animation: divineGlow 8s ease-in-out infinite;
+  transition: all 0.5s ease;
+}
+
+.cover-page:hover .divine-overlay {
+  background: linear-gradient(135deg, 
+    rgba(139, 69, 19, 0.9) 0%, 
+    rgba(255, 215, 0, 0.4) 25%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(218, 165, 32, 0.5) 75%,
+    rgba(139, 69, 19, 0.8) 100%);
+  transform: scale(1.02);
+}
+
+@keyframes divineGlow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* Logo styles with enhanced divine hover effects */
+.logo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo:hover {
+  transform: scale(1.2) rotate(360deg);
+  filter: drop-shadow(0 8px 25px rgba(255, 215, 0, 0.8));
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+  filter: drop-shadow(0 4px 15px rgba(255, 215, 0, 0.6));
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+.logo:hover img {
+  filter: drop-shadow(0 8px 30px rgba(255, 215, 0, 0.9));
+  border: 3px solid rgba(255, 215, 0, 0.8);
+}
+
+/* Cross decoration with enhanced hover effects */
+.cross-decoration {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10;
+  animation: crossFloat 4s ease-in-out infinite;
+  transition: all 0.5s ease;
+}
+
+.cross-decoration:hover {
+  animation: crossSpin 1s ease-in-out;
+  transform: scale(1.3);
+}
+
+.cross-symbol {
+  font-size: 3rem;
+  color: #FFD700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+  transition: all 0.5s ease;
+}
+
+.cross-decoration:hover .cross-symbol {
+  font-size: 4rem;
+  text-shadow: 0 0 40px rgba(255, 215, 0, 1);
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.9));
+}
+
+@keyframes crossFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes crossSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1.3); }
+}
+
+/* Angelic decoration with enhanced hover effects */
+.angelic-decoration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0.15;
+  pointer-events: none;
+  transition: all 0.8s ease;
+}
+
+.angelic-decoration img {
+  width: 600px;
+  height: auto;
+  filter: blur(2px) brightness(1.5);
+  animation: angelicPulse 6s ease-in-out infinite;
+  transition: all 0.8s ease;
+}
+
+.cover-page:hover .angelic-decoration {
+  opacity: 0.3;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.cover-page:hover .angelic-decoration img {
+  filter: blur(1px) brightness(1.8);
+  animation: angelicGlow 2s ease-in-out infinite;
+}
+
+@keyframes angelicPulse {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(1.05); }
+}
+
+@keyframes angelicGlow {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scale(1.1); 
+    filter: blur(1px) brightness(1.8) drop-shadow(0 0 30px rgba(255, 215, 0, 0.5));
+  }
+  50% { 
+    opacity: 0.5; 
+    transform: scale(1.15); 
+    filter: blur(0.5px) brightness(2) drop-shadow(0 0 50px rgba(255, 215, 0, 0.8));
+  }
+}
+
+/* Content wrapper with enhanced hover effects */
+.content-wrapper {
+  text-align: center;
+  z-index: 3;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.cover-page:hover .content-wrapper {
+  transform: scale(1.05);
+}
+
+/* Typography with enhanced devotional styling and hover effects */
+.main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  font-weight: 700;
+  color: #FFD700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1em;
+  text-shadow: 
+    0 2px 20px rgba(139, 69, 19, 0.5),
+    0 0 40px rgba(255, 215, 0, 0.3);
+  animation: titleGlow 3s ease-in-out infinite alternate;
+  transition: all 0.5s ease;
+}
+
+.cover-page:hover .main-title {
+  transform: scale(1.1);
+  text-shadow: 
+    0 4px 30px rgba(139, 69, 19, 0.7),
+    0 0 60px rgba(255, 215, 0, 0.6),
+    0 0 80px rgba(255, 215, 0, 0.4);
+}
+
+@keyframes titleGlow {
+  from { text-shadow: 0 2px 20px rgba(139, 69, 19, 0.5), 0 0 40px rgba(255, 215, 0, 0.3); }
+  to { text-shadow: 0 2px 30px rgba(139, 69, 19, 0.7), 0 0 60px rgba(255, 215, 0, 0.5); }
+}
+
+.tagline {
+  font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+  font-weight: 300;
+  color: rgba(255, 215, 0, 0.9);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.15em;
+  font-style: italic;
+  text-shadow: 0 0 10px rgba(139, 69, 19, 0.5);
+  transition: all 0.5s ease;
+}
+
+.cover-page:hover .tagline {
+  color: #FFD700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  transform: translateY(-5px);
+}
+
+/* Scripture text styling with enhanced hover effects */
+.scripture-text {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  backdrop-filter: blur(5px);
+  animation: fadeInUp 1s ease-out 0.3s both;
+  transition: all 0.5s ease;
+}
+
+.scripture-text:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 215, 0, 0.6);
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.scripture-text p {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 1rem;
+  transition: all 0.5s ease;
+}
+
+.scripture-text:hover p {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.scripture-reference {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: #FFD700;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  transition: all 0.5s ease;
+}
+
+.scripture-text:hover .scripture-reference {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* Devotional text with enhanced hover effects */
+.devotional-text {
+  margin-bottom: 3rem;
+  animation: fadeInUp 1s ease-out 0.5s both;
+  transition: all 0.5s ease;
+}
+
+.devotional-text:hover {
+  transform: scale(1.02);
+}
+
+.devotional-text p {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+}
+
+.devotional-text:hover p {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+/* CTA Buttons with enhanced divine styling and hover effects */
+.cta-section {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.7s both;
+  transition: all 0.5s ease;
+}
+
+.cover-page:hover .cta-section {
+  transform: scale(1.1);
+}
+
+.primary-btn, .secondary-btn {
+  padding: 1.2rem 3rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.8) 0%, rgba(218, 165, 32, 0.7) 100%);
+  color: #2c1810;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+}
+
+.primary-btn:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 1) 0%, rgba(218, 165, 32, 0.9) 100%);
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+  border: 3px solid rgba(255, 215, 0, 0.8);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.primary-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.primary-btn:hover::before {
+  left: 100%;
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFD700;
+  border: 2px solid rgba(255, 215, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 215, 0, 1);
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+.secondary-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.secondary-btn:hover::before {
+  left: 100%;
+}
+
+/* Scroll indicator with enhanced hover effects */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 215, 0, 0.8);
+  font-size: 0.9rem;
+  animation: bounce 2s infinite;
+  transition: all 0.5s ease;
+}
+
+.scroll-indicator:hover {
+  transform: translateX(-50%) scale(1.2);
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+.scroll-arrow {
+  width: 24px;
+  height: 24px;
+  border-right: 2px solid rgba(255, 215, 0, 0.8);
+  border-bottom: 2px solid rgba(255, 215, 0, 0.8);
+  transform: rotate(45deg);
+  margin-bottom: 0.5rem;
+  transition: all 0.5s ease;
+}
+
+.scroll-indicator:hover .scroll-arrow {
+  border-right: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  transform: rotate(45deg) scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* Full screen responsive design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 1rem;
+  }
+  
+  .cta-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .primary-btn, .secondary-btn {
+    width: 250px;
+  }
+  
+  .scripture-text {
+    padding: 1.5rem;
+  }
+  
+  .devotional-text p {
+    padding: 0 1rem;
+  }
+  
+  /* Responsive logo */
+  .logo {
+    top: 1rem;
+    left: 1rem;
+  }
+  
+  .logo img {
+    width: 60px;
+  }
+  
+  /* Responsive cross */
+  .cross-decoration {
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  .cross-symbol {
+    font-size: 2rem;
+  }
+  
+  /* Responsive angelic decoration */
+  .angelic-decoration img {
+    width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    margin-bottom: 1rem;
+  }
+  
+  .tagline {
+    margin-bottom: 2rem;
+  }
+  
+  .scripture-text {
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+  
+  .devotional-text {
+    margin-bottom: 2rem;
+  }
+  
+  .scroll-indicator {
+    bottom: 1rem;
+  }
+  
+  /* Smaller logo for mobile */
+  .logo img {
+    width: 50px;
+  }
+  
+  /* Smaller cross for mobile */
+  .cross-symbol {
+    font-size: 1.5rem;
+  }
+  
+  /* Smaller angelic decoration for mobile */
+  .angelic-decoration img {
+    width: 300px;
+  }
+}
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #FFD700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #8B4513 0%, #DAA520 100%);
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login - Divine{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-container">
+        <a href="{% url 'home' %}" class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Divine Logo">
+        </a>
+        
+        <div class="auth-form">
+            <h2>Welcome Back</h2>
+            <p class="auth-subtitle">Sign in to your Divine account</p>
+            
+            <form method="post">
+                {% csrf_token %}
+                
+                {% if form.non_field_errors %}
+                    <div class="error-messages">
+                        {% for error in form.non_field_errors %}
+                            <p class="error">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">Username</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <span class="error">{{ form.username.errors.0 }}</span>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.password.id_for_label }}">Password</label>
+                    {{ form.password }}
+                    {% if form.password.errors %}
+                        <span class="error">{{ form.password.errors.0 }}</span>
+                    {% endif %}
+                </div>
+                
+                <button type="submit" class="auth-submit-btn">Sign In</button>
+            </form>
+            
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
